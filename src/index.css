@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens */
+@theme {
+  --color-pepper: #d9341f;
+  --color-gold: #f5b83d;
+  --color-leaf: #0f5b3a;
+  --color-ink: #1d1a17;
+  --color-paper: #fffdf8;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 3px; }
