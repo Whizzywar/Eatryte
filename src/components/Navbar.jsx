@@ -4,6 +4,9 @@ import { gsap, useGSAP, motionOK } from "../lib/motion";
 import { IMG, NAV } from "../data";
 import { useCart } from "../context/CartContext";
 
+// Put your logo in /public/Images. The text wordmark shows if the file is missing.
+const LOGO_SRC = "/Images/Eatryte-.png";
+
 // Same image as the hero banner, with a dark tint so the white text stays readable.
 const bannerBg = {
   backgroundImage: `linear-gradient(rgba(29,26,23,0.68), rgba(29,26,23,0.68)), url(${IMG.hero})`,
@@ -12,6 +15,7 @@ const bannerBg = {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoOk, setLogoOk] = useState(true);
   const panel = useRef(null);
   const badge = useRef(null);
   const { count } = useCart();
@@ -28,9 +32,9 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
-  // Close the mobile menu if the window grows to desktop size
+  // Close the mobile menu if the window grows to desktop size (matches the lg breakpoint)
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 1024px)");
     const onChange = (e) => e.matches && setOpen(false);
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
@@ -58,7 +62,7 @@ export default function Navbar() {
   );
 
   const link = ({ isActive }) =>
-    `text-sm font-medium transition hover:text-gold lg:text-base ${isActive ? "text-gold" : "text-white/90"}`;
+    `whitespace-nowrap text-sm font-medium transition hover:text-gold xl:text-base ${isActive ? "text-gold" : "text-white/90"}`;
 
   const showBg = scrolled || open;
 
@@ -71,16 +75,31 @@ export default function Navbar() {
         className={`absolute inset-0 -z-10 bg-cover bg-center shadow-lg transition-opacity duration-300 ${showBg ? "opacity-100" : "opacity-0"}`}
       />
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-5 md:px-8 md:py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-5 md:px-8 lg:py-3">
+        {/* Logo (left) */}
         <Link
           to="/"
-          className="font-display text-xl font-extrabold tracking-tight sm:text-2xl"
+          onClick={() => setOpen(false)}
+          aria-label="Eatryte home"
+          className="flex shrink-0 items-center"
         >
-          Eatryte
+          {logoOk ? (
+            <img
+              src={LOGO_SRC}
+              alt="Eatryte"
+              onError={() => setLogoOk(false)}
+              className="h-9 w-auto object-contain sm:h-11 lg:h-12"
+            />
+          ) : (
+            <span className="font-display text-xl font-extrabold tracking-tight sm:text-2xl">
+              Eatryte
+            </span>
+          )}
         </Link>
 
+        {/* Desktop links: from lg up, so tablets use the menu button and never get crowded */}
         <nav
-          className="hidden items-center gap-5 md:flex lg:gap-8"
+          className="hidden items-center gap-6 lg:flex xl:gap-8"
           aria-label="Main"
         >
           {NAV.map(([label, to]) => (
@@ -108,19 +127,19 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label="Toggle menu"
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/40 md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-white/40 lg:hidden"
           >
             <span className="block h-0.5 w-5 bg-white shadow-[0_6px_0_#fff,0_-6px_0_#fff]" />
           </button>
         </div>
       </div>
 
-      {/* Mobile menu: hangs below the bar so it never adds to the header's height */}
+      {/* Mobile and tablet menu: hangs below the bar so it never adds to the header's height */}
       <div
         id="mobile-nav"
         ref={panel}
         style={bannerBg}
-        className="invisible absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto bg-cover bg-center px-5 pb-6 pt-2 shadow-xl md:hidden"
+        className="invisible absolute inset-x-0 top-full max-h-[calc(100svh-4rem)] overflow-y-auto bg-cover bg-center px-5 pb-6 pt-2 shadow-xl md:px-8 lg:hidden"
       >
         {NAV.map(([label, to]) => (
           <NavLink

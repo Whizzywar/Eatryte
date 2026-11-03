@@ -51,41 +51,6 @@ export default function Footer() {
         </span>
       </div>
 
-      {/* Newsletter band, overlapping the top edge of the footer */}
-      <div className="relative z-10 -mt-14 px-5 md:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-4xl bg-gold p-7 text-ink shadow-2xl md:flex-row md:items-center md:justify-between md:p-10">
-          <div className="max-w-md">
-            <h2 className="font-display text-2xl font-extrabold leading-tight md:text-3xl">
-              Fresh news, hot from the oven
-            </h2>
-            <p className="mt-1 text-ink/75">
-              New dishes, offers and bakes. No spam, promise.
-            </p>
-          </div>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
-            className="flex w-full max-w-md flex-col gap-2 sm:flex-row"
-          >
-            <label htmlFor="footer-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="footer-email"
-              type="email"
-              required
-              placeholder="Your email address"
-              className="min-w-0 flex-1 rounded-full border-2 border-transparent bg-white px-5 py-3.5 text-sm outline-none placeholder:text-ink/45 focus:border-leaf"
-            />
-            <button className="rounded-full bg-ink px-7 py-3.5 text-sm font-bold text-white transition hover:bg-leaf">
-              {sent ? "Subscribed ✓" : "Subscribe"}
-            </button>
-          </form>
-        </div>
-      </div>
-
       {/* Main columns: logo on the left */}
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 pb-14 pt-16 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
