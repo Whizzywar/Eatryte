@@ -124,7 +124,7 @@ export default function Hero() {
         <div className="relative mx-auto aspect-square w-[min(68vw,15rem)] sm:w-72 md:w-full md:max-w-sm lg:max-w-md xl:max-w-lg">
           <div className="hero-plate absolute inset-[7%] overflow-hidden rounded-full border-4 border-gold shadow-2xl sm:border-8">
             <img
-              src={IMG.pasta}
+              src={IMG.hero}
               alt="Eatryte chicken and rice plate"
               className="h-full w-full object-cover"
             />

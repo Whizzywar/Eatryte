@@ -20,7 +20,7 @@ export default function Contact() {
       <PageHeader
         title="Contact Us"
         subtitle="Questions, bulk orders or feedback? Send us a message."
-        image={IMG.snack}
+        image={IMG.contact}
       />
       <section className="bg-paper px-5 py-12 sm:py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-5 md:gap-12">

@@ -1,11 +1,22 @@
 // Put your original images in /public/Images (same file names), or edit the paths here.
 export const IMG = {
-  // Hero banner background. Change this path to use your own banner image.
-  hero: "/Images/photo-1568901346375-23c9450c58cd.jpeg",
+  // page header banner background. Change this path to use your own banner image.
+  hero: "/Images/istockphoto-1363638825-612x612.jpg",
   burger: "/Images/photo-1568901346375-23c9450c58cd.jpeg",
   bread: "/Images/tamas-pap-becv0VQgAKU-unsplash.jpg",
-  snack: "/Images/geri-chapple-fXdoHjQ2Pyg-unsplash.jpg",
+  snack: "/Images/jonathan-pielmayer-Gn64mz9hTqE-unsplash.jpg",
+  storysection: "/Images/tamas-pap-becv0VQgAKU-unsplash.jpg",
+  banner: "/Images/miti-qYreP9QOdrk-unsplash 2.jpg",
+  pizza: "/Images/jonathan-pielmayer-Gn64mz9hTqE-unsplash.jpg",
   pasta: "/Images/mae-mu-Pvclb-iHHYY-unsplash.jpg",
+  menu1: "/Images/photo-1612927601601-6638404737ce.jpeg",
+  menu2: "/Images/nathan-dumlao-8Uv6eanQWzY-unsplash.jpg",
+  menu3: "/Images/charles-chen-w2ZFjDnUL3w-unsplash.jpg",
+  menu4: "/Images/photo-1565958011703-44f9829ba187.jpeg",
+  menu5: "/Images/photo-1568901346375-23c9450c58cd.jpeg",
+  menu6: "/Images/scott-eckersley-bXP4ijL9BrY-unsplash.jpg",
+  menu7: "/Images/elena-leya-lWliLLBMU3I-unsplash.jpg",
+  menu8: "/Images/pranjall-kumar-sejqj6Eaqe8-unsplash.jpg",
 };
 
 export const NAV = [
@@ -30,7 +41,7 @@ export const MENU = [
     name: "Grilled Chicken & Rice",
     cat: "Chicken & Rice",
     price: 4500,
-    img: IMG.pasta,
+    img: IMG.menu1,
     note: "Grilled chicken, garnished rice, savory vegetables.",
   },
   {
@@ -38,7 +49,7 @@ export const MENU = [
     name: "Chicken & Pepper Sauce",
     cat: "Chicken & Rice",
     price: 3800,
-    img: IMG.snack,
+    img: IMG.menu2,
     note: "Crispy chicken with our slow-cooked pepper sauce.",
   },
   {
@@ -46,7 +57,7 @@ export const MENU = [
     name: "Fresh Sliced Bread",
     cat: "Bread & Cake",
     price: 1800,
-    img: IMG.bread,
+    img: IMG.menu3,
     note: "Baked this morning by our bakers.",
   },
   {
@@ -54,7 +65,7 @@ export const MENU = [
     name: "Celebration Cake Slice",
     cat: "Bread & Cake",
     price: 2200,
-    img: IMG.bread,
+    img: IMG.menu4,
     note: "Soft, fluffy and just sweet enough.",
   },
   {
@@ -62,23 +73,23 @@ export const MENU = [
     name: "Classic Beef Burger",
     cat: "Burgers & Pies",
     price: 3500,
-    img: IMG.burger,
+    img: IMG.menu5,
     note: "Flame-grilled patty, fresh salad, toasted bun.",
   },
   {
     id: 6,
-    name: "Chicken Pie",
+    name: "Meat Pie",
     cat: "Burgers & Pies",
     price: 1500,
-    img: IMG.snack,
-    note: "Buttery crust, creamy chicken filling.",
+    img: IMG.menu6,
+    note: "Buttery crust, creamy meat filling.",
   },
   {
     id: 7,
     name: "Suya Shawarma",
     cat: "Pizza & Shawarma",
     price: 3200,
-    img: IMG.burger,
+    img: IMG.menu7,
     note: "Spiced suya meat, cabbage, creamy sauce.",
   },
   {
@@ -86,7 +97,7 @@ export const MENU = [
     name: "Pepperoni Pizza",
     cat: "Pizza & Shawarma",
     price: 6500,
-    img: IMG.pasta,
+    img: IMG.menu8,
     note: "Hand-stretched base, stone-baked.",
   },
 ];

@@ -52,7 +52,7 @@ export default function StorySection() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
         <div className="story-img aspect-4/5 overflow-hidden">
           <img
-            src={IMG.bread}
+            src={IMG.storysection}
             alt="Fresh bread from the Eatryte bakery"
             className="h-[115%] w-full object-cover"
           />
