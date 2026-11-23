@@ -6,6 +6,7 @@ export const IMG = {
   bread: "/Images/tamas-pap-becv0VQgAKU-unsplash.jpg",
   snack: "/Images/jonathan-pielmayer-Gn64mz9hTqE-unsplash.jpg",
   story: "/Images/photo-1612927601601-6638404737ce.jpeg",
+  storysection: "/Images/photo-1612927601601-6638404737ce.jpeg",
   banner: "/Images/istockphoto-1363638825-612x612.jpg",
   pizza: "/Images/jonathan-pielmayer-Gn64mz9hTqE-unsplash.jpg",
   pasta: "/Images/mae-mu-Pvclb-iHHYY-unsplash.jpg",
