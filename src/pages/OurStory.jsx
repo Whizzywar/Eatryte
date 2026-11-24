@@ -86,11 +86,7 @@ export default function OurStory() {
       <section className="overflow-x-clip bg-paper px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="rv mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold text-ink/60">Our story</p>
-            <h2 className="mt-4 font-serif text-4xl leading-[1.1] text-ink md:text-6xl">
-              Food you can <em>trust</em>, made fresh every day.
-            </h2>
-            <Ornament className="mt-8" />
+
           </div>
 
           <div className="mt-16 grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
