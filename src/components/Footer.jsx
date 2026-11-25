@@ -11,6 +11,8 @@ import {
 } from "react-icons/fa6";
 import { NAV } from "../data";
 
+const LINKS = [["Home", "/"], ...NAV.filter(([, to]) => to !== "/")];
+
 // Put your logo in /public/Images. The text wordmark shows if the file is missing.
 const LOGO_SRC = "/Images/Eatryte-simply-different.png";
 
@@ -93,7 +95,7 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="space-y-3 text-sm">
-              {NAV.map(([l, to]) => (
+              {LINKS.map(([l, to]) => (
                 <li key={to}>
                   <Link
                     to={to}

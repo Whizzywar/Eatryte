@@ -12,6 +12,10 @@ const bannerBg = {
   backgroundImage: `linear-gradient(rgba(29,26,23,0.68), rgba(29,26,23,0.68)), url(${IMG.hero})`,
 };
 
+// Home goes first in the menu, unless your NAV list in data.js already includes it.
+const LINKS = NAV.some(([, to]) => to === "/") ? NAV : [["Home", "/"], ...NAV];
+
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -102,11 +106,11 @@ export default function Navbar() {
           className="hidden items-center gap-6 lg:flex xl:gap-8"
           aria-label="Main"
         >
-          {NAV.map(([label, to]) => (
-            <NavLink key={to} to={to} className={link}>
-              {label}
-            </NavLink>
-          ))}
+          {LINKS.map(([label, to]) => (
+  <NavLink key={to} to={to} end={to === "/"} className={link}>
+    {label}
+  </NavLink>
+))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -140,18 +144,19 @@ export default function Navbar() {
         ref={panel}
         style={bannerBg}
         className="invisible absolute inset-x-0 top-full max-h-[calc(100svh-4rem)] overflow-y-auto bg-cover bg-center px-5 pb-6 pt-2 shadow-xl md:px-8 lg:hidden"
-      >
-        {NAV.map(([label, to]) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `block border-b border-white/15 py-3 font-display text-xl ${isActive ? "text-gold" : ""}`
-            }
-          >
-            {label}
-          </NavLink>
-        ))}
+      >{LINKS.map(([label, to]) => (
+  <NavLink
+    key={to}
+    to={to}
+    end={to === "/"}
+    onClick={() => setOpen(false)}
+    className={({ isActive }) =>
+      `block border-b border-white/15 py-3 font-display text-xl ${isActive ? "text-gold" : ""}`
+    }
+  >
+    {label}
+  </NavLink>
+))}
       </div>
     </header>
   );

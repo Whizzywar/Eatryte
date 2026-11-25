@@ -21,11 +21,12 @@ export const IMG = {
 };
 
 export const NAV = [
-  ["Our Story", "/our-story"],
-  ["Our Menu", "/menu"],
+  
+  ["Story", "/our-story"],
+  ["Menu", "/menu"],
   ["Gallery", "/gallery"],
   ["Blog", "/blog"],
-  ["Contact Us", "/contact"],
+  ["Contact", "/contact"],
 ];
 
 export const CATEGORIES = [
